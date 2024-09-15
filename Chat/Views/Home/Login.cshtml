@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .login-container {
+            margin-top: 10%;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #username {
+            border-radius: 50px;
+            padding: 10px 20px;
+        }
+
+        #join {
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container login-container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Join Chat</h2>
+                        <input type="text" id="username" class="form-control mb-3" placeholder="Enter your name" />
+                        <button id="join" class="btn btn-success btn-block">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>document.getElementById("join").addEventListener("click", () => {
+            const username = document.getElementById("username").value;
+            if (!username) {
+                alert("Please enter a username.");
+                return;
+            }
+            localStorage.setItem("username", username);
+            window.location.href = "/home/chat";
+        });</script>
+</body>
+</html>

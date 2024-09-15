@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Chat";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js"></script>
+    <style>
+        #chat-messages {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #message {
+            border-radius: 50px;
+            padding: 10px 20px;
+        }
+
+        #send {
+            border-radius: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="text-center">Chat Room</h2>
+                        <div id="chat-messages" class="p-3 mb-3" style="height: 300px; overflow-y: auto; background-color: #f9f9f9;"></div>
+                        <div class="input-group">
+                            <input type="text" id="message" class="form-control" placeholder="Type a message..." aria-label="Message">
+                            <div class="input-group-append">
+                                <button id="send" class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chathub")
+            .build();
+
+        const username = localStorage.getItem("username");
+        if (!username) {
+            window.location.href = "/home/login";
+        }
+
+        connection.on("ReceiveMessage", (user, message) => {
+            const msg = `${user}: ${message}`;
+            document.getElementById("chat-messages").innerHTML += `<div>${msg}</div>`;
+            document.getElementById("chat-messages").scrollTop = document.getElementById("chat-messages").scrollHeight;
+        });
+
+        document.getElementById("send").addEventListener("click", () => {
+            const message = document.getElementById("message").value;
+            if (!message) {
+                alert("Please enter a message.");
+                return;
+            }
+            connection.invoke("SendMessage", username, message).catch(err => console.error(err.toString()));
+        });
+
+        connection.start()
+            .then(() => {
+                console.log("SignalR connected");
+                connection.invoke("JoinChat", username).catch(err => console.error("Error joining chat:", err));
+            })
+            .catch(err => console.error("Error connecting SignalR: ", err));</script>
+</body>
+</html>
