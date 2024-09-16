@@ -32,8 +32,10 @@ public class ChatHub : Hub
     public async Task GetUsers()
     {
         var users = await _context.ChatUsers.Select(u => u.Username).ToListAsync();
+
         await Clients.Caller.SendAsync("ReceiveUsers", users);
     }
+
 
     public async Task JoinChat(string username)
     {
@@ -57,4 +59,19 @@ public class ChatHub : Hub
         var users = await _context.ChatUsers.Select(u => u.Username).ToListAsync();
         await Clients.All.SendAsync("ReceiveUsers", users);
     }
+
+
+    public async Task LoadMessageHistory()
+    {
+        var messages = await _context.ChatMessages
+            .OrderByDescending(m => m.SentAt)
+            .Take(50)
+            .ToListAsync();
+
+        foreach (var message in messages.OrderBy(m => m.SentAt)) // Сортируем по дате отправки для правильного отображения
+        {
+            await Clients.Caller.SendAsync("ReceiveMessage", message.Sender, message.Message);
+        }
+    }
+
 }

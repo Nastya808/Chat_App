@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{3E4E21D1-3FF1-4106-BF18-103C3ACEEA06}|Default">
+  <MonoDevelop.Ide.ItemProperties.Chat PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Chat/Program.cs">
+    <Files>
+      <File FileName="Chat/Hubs/ChatHub.cs" Line="71" Column="1" />
+      <File FileName="Chat/Views/Home/Chat.cshtml" Line="53" Column="1" />
+      <File FileName="Chat/Models/ChatMessage.cs" Line="1" Column="1" />
+      <File FileName="Chat/Models/ChatUser.cs" Line="1" Column="1" />
+      <File FileName="Chat/Program.cs" Line="1" Column="1" />
+      <File FileName="Chat/Data/ChatContext.cs" Line="1" Column="1" />
+      <File FileName="Chat/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="Chat/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="Chat/Views/Home/Login.cshtml" Line="1" Column="1" />
+      <File FileName="Chat/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Chat">
+            <Node name="Chat">
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

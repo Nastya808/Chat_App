@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3MZZNxv3pQsP3TzDaVxf1deDp80IjvKkXwi/5Y4Up1AsQoPW2VDaQWjwzF6wQvNDuQdIciw6eswIBY+AajM5BQ==",
+  "dgSpecHash": "8e6LQf8WozlMyub8CJCv7QhRF+RJ9TG2+d+PK7LaywvrKvWmWKRQxc0L+neUrHNw203qO/QemlqIshDbv9318g==",
   "success": true,
-  "projectFilePath": "/Users/nastyaergenova/Projects/Chat/Chat/Chat.csproj",
+  "projectFilePath": "/Users/nastyaergenova/Documents/GitHub/Chat_App/Chat/Chat.csproj",
   "expectedPackageFiles": [
     "/Users/nastyaergenova/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/Users/nastyaergenova/.nuget/packages/microsoft.aspnetcore.authorization/2.2.0/microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",

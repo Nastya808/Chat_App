@@ -2852,11 +2852,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nastyaergenova/Projects/Chat/Chat/Chat.csproj",
+      "projectUniqueName": "/Users/nastyaergenova/Documents/GitHub/Chat_App/Chat/Chat.csproj",
       "projectName": "Chat",
-      "projectPath": "/Users/nastyaergenova/Projects/Chat/Chat/Chat.csproj",
+      "projectPath": "/Users/nastyaergenova/Documents/GitHub/Chat_App/Chat/Chat.csproj",
       "packagesPath": "/Users/nastyaergenova/.nuget/packages/",
-      "outputPath": "/Users/nastyaergenova/Projects/Chat/Chat/obj/",
+      "outputPath": "/Users/nastyaergenova/Documents/GitHub/Chat_App/Chat/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nastyaergenova/.nuget/NuGet/NuGet.Config"
